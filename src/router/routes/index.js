@@ -33,7 +33,7 @@ const getLayout = {
 }
 
 // ** Document title
-const TemplateTitle = '%s - Vuexy React Admin Template'
+const TemplateTitle = '%s - Hirconn React Admin Template'
 
 // ** Default Route
 const DefaultRoute = '/dashboard/ecommerce'
@@ -52,7 +52,7 @@ const Routes = [
   ...ChartsRoutes
 ]
 
-const getRouteMeta = route => {
+const getRouteMeta = (route) => {
   if (isObjEmpty(route.element.props)) {
     if (route.meta) {
       return { routeMeta: route.meta }
@@ -67,12 +67,13 @@ const MergeLayoutRoutes = (layout, defaultLayout) => {
   const LayoutRoutes = []
 
   if (Routes) {
-    Routes.filter(route => {
+    Routes.filter((route) => {
       let isBlank = false
       // ** Checks if Route layout or Default layout matches current layout
       if (
         (route.meta && route.meta.layout && route.meta.layout === layout) ||
-        ((route.meta === undefined || route.meta.layout === undefined) && defaultLayout === layout)
+        ((route.meta === undefined || route.meta.layout === undefined) &&
+          defaultLayout === layout)
       ) {
         let RouteTag = PrivateRoute
 
@@ -105,13 +106,13 @@ const MergeLayoutRoutes = (layout, defaultLayout) => {
   return LayoutRoutes
 }
 
-const getRoutes = layout => {
+const getRoutes = (layout) => {
   const defaultLayout = layout || 'vertical'
   const layouts = ['vertical', 'horizontal', 'blank']
 
   const AllRoutes = []
 
-  layouts.forEach(layoutItem => {
+  layouts.forEach((layoutItem) => {
     const LayoutRoutes = MergeLayoutRoutes(layoutItem, defaultLayout)
 
     AllRoutes.push({

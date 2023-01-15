@@ -43,7 +43,7 @@ const NavbarSearch = () => {
   }
 
   // ** Function to clear input value
-  const handleClearInput = setUserInput => {
+  const handleClearInput = (setUserInput) => {
     if (!navbarSearch) {
       setUserInput('')
       handleClearQueryInStore()
@@ -51,7 +51,7 @@ const NavbarSearch = () => {
   }
 
   // ** Function to close search on ESC & ENTER Click
-  const onKeyDown = e => {
+  const onKeyDown = (e) => {
     if (e.keyCode === 27 || e.keyCode === 13) {
       setTimeout(() => {
         setNavbarSearch(false)
@@ -76,33 +76,41 @@ const NavbarSearch = () => {
   }
 
   return (
-    <NavItem className='nav-search' onClick={() => setNavbarSearch(true)}>
-      <NavLink className='nav-link-search'>
-        <Icon.Search className='ficon' />
+    <NavItem className="nav-search" onClick={() => setNavbarSearch(true)}>
+      <NavLink className="nav-link-search">
+        <Icon.Search className="ficon" />
       </NavLink>
       <div
         className={classnames('search-input', {
           open: navbarSearch === true
-        })}
-      >
-        <div className='search-input-icon'>
+        })}>
+        <div className="search-input-icon">
           <Icon.Search />
         </div>
         {navbarSearch ? (
           <Autocomplete
-            className='form-control'
+            className="form-control"
             suggestions={suggestions}
-            filterKey='title'
-            filterHeaderKey='groupTitle'
+            filterKey="title"
+            filterHeaderKey="groupTitle"
             grouped={true}
-            placeholder='Explore Vuexy...'
+            placeholder="Explore Hirconn..."
             autoFocus={true}
             onSuggestionItemClick={handleSuggestionItemClick}
             externalClick={handleExternalClick}
-            clearInput={(userInput, setUserInput) => handleClearInput(setUserInput)}
+            clearInput={(userInput, setUserInput) =>
+              handleClearInput(setUserInput)
+            }
             onKeyDown={onKeyDown}
-            onChange={e => dispatch(handleSearchQuery(e.target.value))}
-            customRender={(item, i, filteredData, activeSuggestion, onSuggestionItemClick, onSuggestionItemHover) => {
+            onChange={(e) => dispatch(handleSearchQuery(e.target.value))}
+            customRender={(
+              item,
+              i,
+              filteredData,
+              activeSuggestion,
+              onSuggestionItemClick,
+              onSuggestionItemHover
+            ) => {
               const IconTag = Icon[item.icon ? item.icon : 'X']
               return (
                 <li
@@ -110,32 +118,50 @@ const NavbarSearch = () => {
                     active: filteredData.indexOf(item) === activeSuggestion
                   })}
                   key={i}
-                  onClick={e => handleListItemClick(onSuggestionItemClick, item.link, e)}
-                  onMouseEnter={() => onSuggestionItemHover(filteredData.indexOf(item))}
-                >
+                  onClick={(e) =>
+                    handleListItemClick(onSuggestionItemClick, item.link, e)
+                  }
+                  onMouseEnter={() =>
+                    onSuggestionItemHover(filteredData.indexOf(item))
+                  }>
                   <div
                     className={classnames({
-                      'd-flex justify-content-between align-items-center': item.file || item.img
-                    })}
-                  >
-                    <div className='item-container d-flex'>
+                      'd-flex justify-content-between align-items-center':
+                        item.file || item.img
+                    })}>
+                    <div className="item-container d-flex">
                       {item.icon ? (
                         <IconTag size={17} />
                       ) : item.file ? (
-                        <img src={item.file} height='36' width='28' alt={item.title} />
+                        <img
+                          src={item.file}
+                          height="36"
+                          width="28"
+                          alt={item.title}
+                        />
                       ) : item.img ? (
-                        <img className='rounded-circle mt-25' src={item.img} height='28' width='28' alt={item.title} />
+                        <img
+                          className="rounded-circle mt-25"
+                          src={item.img}
+                          height="28"
+                          width="28"
+                          alt={item.title}
+                        />
                       ) : null}
-                      <div className='item-info ms-1'>
-                        <p className='align-middle mb-0'>{item.title}</p>
+                      <div className="item-info ms-1">
+                        <p className="align-middle mb-0">{item.title}</p>
                         {item.by || item.email ? (
-                          <small className='text-muted'>{item.by ? item.by : item.email ? item.email : null}</small>
+                          <small className="text-muted">
+                            {item.by ? item.by : item.email ? item.email : null}
+                          </small>
                         ) : null}
                       </div>
                     </div>
                     {item.size || item.date ? (
-                      <div className='meta-container'>
-                        <small className='text-muted'>{item.size ? item.size : item.date ? item.date : null}</small>
+                      <div className="meta-container">
+                        <small className="text-muted">
+                          {item.size ? item.size : item.date ? item.date : null}
+                        </small>
                       </div>
                     ) : null}
                   </div>
@@ -144,10 +170,10 @@ const NavbarSearch = () => {
             }}
           />
         ) : null}
-        <div className='search-input-close'>
+        <div className="search-input-close">
           <Icon.X
-            className='ficon'
-            onClick={e => {
+            className="ficon"
+            onClick={(e) => {
               e.stopPropagation()
               setNavbarSearch(false)
               handleClearQueryInStore()

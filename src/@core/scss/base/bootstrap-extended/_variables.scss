@@ -2,7 +2,7 @@
 //  File Name: variables.scss
 //  Description: Custom overrides of Bootstrap variables
 //  ----------------------------------------------------------------------------------------------
-//  Item Name: Vuexy  - Vuejs, HTML & Laravel Admin Dashboard Template
+//  Item Name: Hirconn  - Vuejs, HTML & Laravel Admin Dashboard Template
 //  Author: PIXINVENT
 //  Author URL: http://www.themeforest.net/user/pixinvent
 //  ================================================================================================
@@ -24,7 +24,7 @@ $gray-800: #1e1e1e !default; // $gray-dark
 $gray-900: #2a2e30 !default;
 $black: #22292f !default; // 231f48 22292f
 
-$purple: #7367f0 !default; //$primary
+$purple: #750ca2 !default; //$primary
 $green: #28c76f !default; //$success
 $blue: #00cfe8 !default; //$info
 $orange: #ff9f43 !default; //$warning
@@ -251,8 +251,9 @@ $btn-border-radius: 0.358rem !default;
 $btn-border-radius-lg: $btn-border-radius !default;
 $btn-border-radius-sm: $btn-border-radius !default;
 
-$btn-transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out,
-  box-shadow 0.15s ease-in-out, background 0s, border 0s !default;
+$btn-transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
+  border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out, background 0s,
+  border 0s !default;
 
 // Forms
 $form-label-margin-bottom: 0.2857rem !default;
@@ -320,7 +321,8 @@ $form-switch-width: 3rem !default;
 $form-switch-height: 1.7rem !default; // (c)
 $form-switch-padding-start: $form-switch-width + 0.5rem !default;
 $form-switch-bg-image: url("data:image/svg+xml,<svg width='26px' height='26px' viewBox='0 0 26 27' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'><defs><circle id='path-1' cx='8' cy='8' r='8'></circle><filter x='-40.6%' y='-21.9%' width='168.8%' height='168.8%' filterUnits='objectBoundingBox' id='filter-2'><feOffset dx='-1' dy='2' in='SourceAlpha' result='shadowOffsetOuter1'></feOffset><feGaussianBlur stdDeviation='1.5' in='shadowOffsetOuter1' result='shadowBlurOuter1'></feGaussianBlur><feColorMatrix values='0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.2 0' type='matrix' in='shadowBlurOuter1'></feColorMatrix></filter></defs><g id='Artboard' stroke='none' stroke-width='1' fill='none' fill-rule='evenodd'><g id='switches-dot' transform='translate(5.000000, 5.000000)' fill-rule='nonzero'><g id='Oval'><use fill='black' fill-opacity='1' filter='url(#filter-2)' xlink:href='#path-1'></use><use fill='#{$form-switch-color}' xlink:href='#path-1'></use></g></g></g></svg>") !default;
-$form-switch-transition: background-position 0.15s ease-in-out, background-color 0.1s ease !default;
+$form-switch-transition: background-position 0.15s ease-in-out,
+  background-color 0.1s ease !default;
 $form-switch-focus-color: $form-switch-color !default;
 $form-switch-focus-bg-image: url("data:image/svg+xml,<svg width='26px' height='26px' viewBox='0 0 26 27' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'><defs><circle id='path-1' cx='8' cy='8' r='8'></circle><filter x='-40.6%' y='-21.9%' width='168.8%' height='168.8%' filterUnits='objectBoundingBox' id='filter-2'><feOffset dx='-1' dy='2' in='SourceAlpha' result='shadowOffsetOuter1'></feOffset><feGaussianBlur stdDeviation='1.5' in='shadowOffsetOuter1' result='shadowBlurOuter1'></feGaussianBlur><feColorMatrix values='0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.2 0' type='matrix' in='shadowBlurOuter1'></feColorMatrix></filter></defs><g id='Artboard' stroke='none' stroke-width='1' fill='none' fill-rule='evenodd'><g id='switches-dot' transform='translate(5.000000, 5.000000)' fill-rule='nonzero'><g id='Oval'><use fill='black' fill-opacity='1' filter='url(#filter-2)' xlink:href='#path-1'></use><use fill='#{$form-switch-focus-color}' xlink:href='#path-1'></use></g></g></g></svg>") !default;
 
@@ -355,7 +357,8 @@ $form-floating-padding-y: $input-padding-y !default;
 $form-floating-input-padding-t: $input-padding-y !default;
 $form-floating-input-padding-b: $input-padding-y !default;
 $form-floating-label-opacity: 0.9 !default;
-$form-floating-label-transform: scale(0.85) translateY(-2.25rem) translateX(-0.85rem) !default;
+$form-floating-label-transform: scale(0.85) translateY(-2.25rem)
+  translateX(-0.85rem) !default;
 
 // Form validation
 

@@ -10,7 +10,8 @@ function generateDataHeat(count, yrange) {
   const series = []
   while (i < count) {
     const x = `w${(i + 1).toString()}`
-    const y = Math.floor(Math.random() * (yrange.max - yrange.min + 1)) + yrange.min
+    const y =
+      Math.floor(Math.random() * (yrange.max - yrange.min + 1)) + yrange.min
 
     series.push({
       x,
@@ -70,7 +71,7 @@ const ApexHeatmapChart = () => {
               from: 51,
               to: 60,
               name: '50-60',
-              color: '#7367f0'
+              color: '#750CA2'
             }
           ]
         }
@@ -157,10 +158,10 @@ const ApexHeatmapChart = () => {
   return (
     <Card>
       <CardHeader>
-        <CardTitle tag='h4'>Daily Sales States</CardTitle>
+        <CardTitle tag="h4">Daily Sales States</CardTitle>
       </CardHeader>
-      <CardBody className='apex-charts-heatmap'>
-        <Chart options={options} series={series} type='heatmap' height={350} />
+      <CardBody className="apex-charts-heatmap">
+        <Chart options={options} series={series} type="heatmap" height={350} />
       </CardBody>
     </Card>
   )
